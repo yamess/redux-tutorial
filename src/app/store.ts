@@ -1,12 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import uiReducer from '@/app/features/ui/incSlice';
+import counterReducer from '@/app/features/ui/incSlice';
 
-const store = configureStore({
+export const store = configureStore({
     reducer: {
-        ui: uiReducer,
+        countReducer: counterReducer
     }
 });
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-export default store;
